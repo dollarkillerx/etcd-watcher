@@ -52,7 +52,7 @@ func TestWithEnforcer(t *testing.T) {
 	w, _ := NewWatcher([]string{"http://127.0.0.1:2379"}, "/casbin")
 
 	// Initialize the enforcer.
-	e, _ := casbin.NewEnforcer("examples/rbac_model.conf", "examples/rbac_policy.csv")
+	e := casbin.NewEnforcer("examples/rbac_model.conf", "examples/rbac_policy.csv")
 
 	// Set the watcher for the enforcer.
 	e.SetWatcher(w)
